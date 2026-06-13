@@ -4,21 +4,21 @@ namespace queasy\validation;
 
 abstract class AbstractRule implements RuleInterface
 {
-    private $parameter;
+    private $parameters;
 
-    public function __construct($parameter)
+    public function __construct($parameters)
     {
-        $this->parameter = $parameter;
+        $this->parameters = $parameters;
     }
 
     abstract public function validate($value, array $data = array());
 
-    public function getParameter()
+    public function parameters()
     {
-        return $this->parameter;
+        return $this->parameters;
     }
 
-    public function getMessage()
+    public function message()
     {
         return 'Wrong value';
     }

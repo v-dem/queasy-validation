@@ -6,8 +6,8 @@ interface RuleInterface
 {
     function validate($value, array $data = array());
 
-    function getParameter();
+    function parameters();
 
-    function getMessage();
+    function message();
 }
 

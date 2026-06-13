@@ -9,7 +9,7 @@ class EmailRule extends AbstractRule
         return empty($value) || is_string($value) && filter_var($value, FILTER_VALIDATE_EMAIL);
     }
 
-    public function getMessage()
+    public function message()
     {
         return 'This field should be correct email';
     }

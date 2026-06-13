@@ -2,13 +2,11 @@
 
 namespace queasy\validation;
 
-class RequiredRule extends Rule
+class IsSetRule extends Rule
 {
     public function validate($value)
     {
-        return !($this->parameters()
-            && (is_null($value)
-                || (0 === strlen((string) $value))));
+        return !is_null($value);
     }
 
     public function message()
