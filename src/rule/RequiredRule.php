@@ -4,7 +4,6 @@ namespace queasy\validation;
 
 class RequiredRule extends Rule
 {
-
     public function validate($value)
     {
         return !($this->getParameter()
@@ -12,5 +11,9 @@ class RequiredRule extends Rule
                 || (0 === strlen((string) $value))));
     }
 
+    public function getMessage()
+    {
+        return 'This field is required';
+    }
 }
 

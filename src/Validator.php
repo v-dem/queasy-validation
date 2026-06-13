@@ -2,21 +2,42 @@
 
 namespace queasy\validation;
 
-use queasy\SystemException;
-use queasy\ApplicationException;
-use queasy\ClassNotFoundException;
-use queasy\i18n\LangTrait;
+use queasy\validation\rule\{Required, MaxLength, MinLength, Email};
 
 class Validator
 {
+    private $rules;
 
-    use LangTrait;
+    private $config;
 
-    const RULE_CLASS_TEMPLATE = 'queasy\validation\%sRule';
-    const MESSAGE_CODE_TEMPLATE = '%s.%s.%s';
-
-    public static function validate(array $rules = array(), array $data = array(), $prefix = 'queasy')
+    public function __construct($config)
     {
+        $this->config = $config;
+
+        $this->rules = [
+            'required'  => Required::class,
+            'maxlength' => MaxLength::class,
+            'minlength' => MinLength::class,
+            'email'     => Email::class
+        ];
+    }
+
+    public function registerRule($name, $class)
+    {
+        $this->rules[$name] = $class;
+    }
+
+    public function validate($key, array $data)
+    {
+        if (!isset($this->config[$key])) {
+            throw new Exception("Missing validator configuration for \"$key\"");
+        }
+
+        $fields = $this->config[$key];
+        foreach ($fields as $field => $value) {
+            
+        }
+/*
         $messagesMap = array();
         foreach ($rules as $fieldName => $fieldRules) {
             foreach ($fieldRules as $ruleName => $ruleParameter) {
@@ -54,6 +75,7 @@ class Validator
         if (count($messagesMap)) {
             throw new ValidationException($messagesMap);
         }
+*/
     }
 
 }
