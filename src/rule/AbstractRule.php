@@ -2,8 +2,6 @@
 
 namespace queasy\validation;
 
-require_once 'RuleInterface.php';
-
 abstract class AbstractRule implements RuleInterface
 {
     private $parameters;
