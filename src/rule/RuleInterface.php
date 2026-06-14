@@ -4,7 +4,7 @@ namespace queasy\validation;
 
 interface RuleInterface
 {
-    function validate($value, array $data = array());
+    function validate($value);
 
     function parameters();
 

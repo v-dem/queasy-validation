@@ -2,6 +2,8 @@
 
 namespace queasy\validation;
 
+require_once 'AbstractRule.php';
+
 class IsSetRule extends AbstractRule
 {
     public function validate($value)

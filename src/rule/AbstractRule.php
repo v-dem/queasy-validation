@@ -2,6 +2,8 @@
 
 namespace queasy\validation;
 
+require_once 'RuleInterface.php';
+
 abstract class AbstractRule implements RuleInterface
 {
     private $parameters;
@@ -11,7 +13,7 @@ abstract class AbstractRule implements RuleInterface
         $this->parameters = $parameters;
     }
 
-    abstract public function validate($value, array $data = array());
+    abstract public function validate($value);
 
     public function parameters()
     {
