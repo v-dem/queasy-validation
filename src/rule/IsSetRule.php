@@ -2,7 +2,7 @@
 
 namespace queasy\validation;
 
-class IsSetRule extends Rule
+class IsSetRule extends AbstractRule
 {
     public function validate($value)
     {

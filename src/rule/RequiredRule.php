@@ -2,7 +2,7 @@
 
 namespace queasy\validation;
 
-class RequiredRule extends Rule
+class RequiredRule extends AbstractRule
 {
     public function validate($value)
     {
