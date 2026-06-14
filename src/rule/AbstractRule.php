@@ -6,7 +6,7 @@ abstract class AbstractRule implements RuleInterface
 {
     private $parameters;
 
-    public function __construct($parameters)
+    public function __construct($parameters = null)
     {
         $this->parameters = $parameters;
     }
