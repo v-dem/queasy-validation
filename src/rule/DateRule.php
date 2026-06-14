@@ -1,6 +1,6 @@
 <?php
 
-namespace queasy\validation;
+namespace queasy\validation\rule;
 
 class DateRule extends AbstractRule
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace queasy\validation;
+namespace queasy\validation\rule;
 
 class MinLengthRule extends AbstractRule
 {

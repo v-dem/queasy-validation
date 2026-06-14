@@ -1,6 +1,6 @@
 <?php
 
-namespace queasy\validation;
+namespace queasy\validation\rule;
 
 abstract class AbstractRule implements RuleInterface
 {
